@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "832886275457",
+    "project_id": "crossdress-acmrmz",
+    "storage_bucket": "crossdress-acmrmz.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:832886275457:android:7815e631b7e9392dea3c80",
+        "android_client_info": {
+          "package_name": "com.silver.crossdress"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZTWQG38E9cHKpSjNuWttjybJ6Z1v-wC4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
