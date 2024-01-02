@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/components/back_view_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -79,6 +80,9 @@ class RegisterPageModel extends FlutterFlowModel<RegisterPageWidget> {
     return null;
   }
 
+  // Model for BackView component.
+  late BackViewModel backViewModel;
+
   /// Initialization and disposal methods.
 
   void initState(BuildContext context) {
@@ -89,6 +93,7 @@ class RegisterPageModel extends FlutterFlowModel<RegisterPageWidget> {
     passwordConfirmControllerValidator = _passwordConfirmControllerValidator;
     displayNameControllerValidator = _displayNameControllerValidator;
     phoneNumberControllerValidator = _phoneNumberControllerValidator;
+    backViewModel = createModel(context, () => BackViewModel());
   }
 
   void dispose() {
@@ -107,6 +112,8 @@ class RegisterPageModel extends FlutterFlowModel<RegisterPageWidget> {
 
     phoneNumberFocusNode?.dispose();
     phoneNumberController?.dispose();
+
+    backViewModel.dispose();
   }
 
   /// Action blocks are added here.
