@@ -4,7 +4,6 @@ import '/flutter_flow/flutter_flow_swipeable_stack.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
@@ -86,6 +85,10 @@ class _HomePageWidgetState extends State<HomePageWidget>
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
+              Text(
+                _model.swipe,
+                style: FlutterFlowTheme.of(context).bodyMedium,
+              ),
               Expanded(
                 child: StreamBuilder<List<UsersRecord>>(
                   stream: queryUsersRecord(
@@ -93,21 +96,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                       'status',
                       isEqualTo: 1,
                     ),
-                  )..listen((snapshot) async {
-                      List<UsersRecord> swipeableStackUsersRecordList =
-                          snapshot;
-                      if (_model.swipeableStackPreviousSnapshot != null &&
-                          !const ListEquality(UsersRecordDocumentEquality())
-                              .equals(swipeableStackUsersRecordList,
-                                  _model.swipeableStackPreviousSnapshot)) {
-                        final swipeableStackUsersRecord =
-                            swipeableStackUsersRecordList[index];
-                        _model.swipe = '6';
-
-                        setState(() {});
-                      }
-                      _model.swipeableStackPreviousSnapshot = snapshot;
-                    }),
+                  ),
                   builder: (context, snapshot) {
                     // Customize what your widget looks like when it's loading.
                     if (!snapshot.hasData) {
@@ -129,27 +118,37 @@ class _HomePageWidgetState extends State<HomePageWidget>
                       onSwipeFn: (index) async {
                         final swipeableStackUsersRecord =
                             swipeableStackUsersRecordList[index];
-                        _model.swipe = '1';
+                        setState(() {
+                          _model.swipe = '1';
+                        });
                       },
                       onLeftSwipe: (index) async {
                         final swipeableStackUsersRecord =
                             swipeableStackUsersRecordList[index];
-                        _model.swipe = '2';
+                        setState(() {
+                          _model.swipe = '2';
+                        });
                       },
                       onRightSwipe: (index) async {
                         final swipeableStackUsersRecord =
                             swipeableStackUsersRecordList[index];
-                        _model.swipe = '3';
+                        setState(() {
+                          _model.swipe = '3';
+                        });
                       },
                       onUpSwipe: (index) async {
                         final swipeableStackUsersRecord =
                             swipeableStackUsersRecordList[index];
-                        _model.swipe = '4';
+                        setState(() {
+                          _model.swipe = '4';
+                        });
                       },
                       onDownSwipe: (index) async {
                         final swipeableStackUsersRecord =
                             swipeableStackUsersRecordList[index];
-                        _model.swipe = '5';
+                        setState(() {
+                          _model.swipe = '5';
+                        });
                       },
                       itemBuilder: (context, swipeableStackIndex) {
                         final swipeableStackUsersRecord =
