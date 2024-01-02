@@ -5,7 +5,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'home_page_widget.dart' show HomePageWidget;
-import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
@@ -24,7 +23,6 @@ class HomePageModel extends FlutterFlowModel<HomePageWidget> {
   final unfocusNode = FocusNode();
   // State field(s) for SwipeableStack widget.
   late CardSwiperController swipeableStackController;
-  List<UsersRecord>? swipeableStackPreviousSnapshot;
 
   /// Initialization and disposal methods.
 
