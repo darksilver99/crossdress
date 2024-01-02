@@ -193,7 +193,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                         alignment:
                                             AlignmentDirectional(0.0, 0.0),
                                         child: Text(
-                                          swipeableStackUsersRecord.displayName,
+                                          swipeableStackUsersRecord.phoneNumber,
                                           maxLines: 1,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
