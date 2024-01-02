@@ -125,22 +125,30 @@ class _HomePageWidgetState extends State<HomePageWidget>
                       onLeftSwipe: (index) async {
                         final swipeableStackUsersRecord =
                             swipeableStackUsersRecordList[index];
-                        _model.swipe = '2';
+                        setState(() {
+                          _model.swipe = '2';
+                        });
                       },
                       onRightSwipe: (index) async {
                         final swipeableStackUsersRecord =
                             swipeableStackUsersRecordList[index];
-                        _model.swipe = '3';
+                        setState(() {
+                          _model.swipe = '3';
+                        });
                       },
                       onUpSwipe: (index) async {
                         final swipeableStackUsersRecord =
                             swipeableStackUsersRecordList[index];
-                        _model.swipe = '4';
+                        setState(() {
+                          _model.swipe = '4';
+                        });
                       },
                       onDownSwipe: (index) async {
                         final swipeableStackUsersRecord =
                             swipeableStackUsersRecordList[index];
-                        _model.swipe = '5';
+                        setState(() {
+                          _model.swipe = '5';
+                        });
                       },
                       itemBuilder: (context, swipeableStackIndex) {
                         final swipeableStackUsersRecord =
