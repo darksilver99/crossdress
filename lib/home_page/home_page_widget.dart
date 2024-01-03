@@ -158,7 +158,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                             ClipRRect(
                               borderRadius: BorderRadius.circular(8.0),
                               child: Image.network(
-                                'https://images.unsplash.com/photo-1595068759218-8d4c38be4e86?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwyMnx8bmlnaHQlMjBza3l8ZW58MHx8fHwxNzA0MDczMjQwfDA&ixlib=rb-4.0.3&q=80&w=1080',
+                                'https://images.unsplash.com/photo-1689650337975-ed93cf3d58e8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwzfHxjYWxtaW5nJTIwbmF0dXJlfGVufDB8fHx8MTcwNDIzMDA3OXww&ixlib=rb-4.0.3&q=80&w=1080',
                                 width: double.infinity,
                                 height: MediaQuery.sizeOf(context).height * 1.0,
                                 fit: BoxFit.cover,
