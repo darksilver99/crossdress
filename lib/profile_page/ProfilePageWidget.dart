@@ -1,5 +1,5 @@
 import 'package:crossdress/colos.dart';
-import 'package:crossdress/profile_page/MyAccount.dart';
+import 'package:crossdress/my_account_page/MyAccount.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -22,15 +22,16 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
               child: InkResponse(
-                onTap:(){
+                onTap: () {
                   Navigator.push(
                     context,
                     CupertinoPageRoute(builder: (context) => MyAccount()),
                   );
-
-                },child: Icon(Icons.menu),),
+                },
+                child: Icon(Icons.menu),
+              ),
             ),
             Expanded(
               child: SingleChildScrollView(
@@ -40,27 +41,46 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    SizedBox(height: 8,),
+                    SizedBox(
+                      height: 8,
+                    ),
                     Center(
-                      child:  SizedBox(
+                      child: SizedBox(
                         width: 120,
                         height: 120,
                         child: ClipRRect(
-                            borderRadius: BorderRadius.circular(100), child: const Image(image: AssetImage('assets/images/kuwan.jpg'))),
+                            borderRadius: BorderRadius.circular(100),
+                            child: const Image(
+                                image: AssetImage('assets/images/kuwan.jpg'))),
                       ),
                     ),
-                    SizedBox(height: 24,),
-                    Text('Benz',style: TextStyle(color: Colored.black,fontWeight: FontWeight.w600,fontSize: 16),),
-                    SizedBox(height: 8,),
-                    Text('foythong@gmail.com',style: TextStyle(color: Colored.black,fontWeight: FontWeight.w400,fontSize: 14)),
-                    SizedBox(height: 24,),
-
-
+                    SizedBox(
+                      height: 24,
+                    ),
+                    Text(
+                      'Benz',
+                      style: TextStyle(
+                          color: Colored.black,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 16),
+                    ),
+                    SizedBox(
+                      height: 8,
+                    ),
+                    Text('foythong@gmail.com',
+                        style: TextStyle(
+                            color: Colored.black,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 14)),
+                    SizedBox(
+                      height: 24,
+                    ),
                     MasonryGridView.builder(
                       shrinkWrap: true,
                       itemCount: 100,
                       physics: const NeverScrollableScrollPhysics(),
-                      gridDelegate: const SliverSimpleGridDelegateWithFixedCrossAxisCount(
+                      gridDelegate:
+                          const SliverSimpleGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2,
                       ),
                       itemBuilder: (context, index) => Padding(
