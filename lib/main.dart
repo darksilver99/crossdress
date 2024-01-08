@@ -1,3 +1,5 @@
+import 'package:crossdress/colos.dart';
+import 'package:crossdress/profile_page/ProfilePageWidget.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -115,6 +117,7 @@ class NavBarPage extends StatefulWidget {
 class _NavBarPageState extends State<NavBarPage> {
   String _currentPageName = 'HomePage';
   late Widget? _currentPage;
+  int selectBottom = 0;
 
   @override
   void initState() {
@@ -125,14 +128,68 @@ class _NavBarPageState extends State<NavBarPage> {
 
   @override
   Widget build(BuildContext context) {
-    final tabs = {
-      'HomePage': HomePageWidget(),
-      'SettingPage': SettingPageWidget(),
+    Map tabs = {
+      'HomePage': {'icon': Icons.home, 'page': HomePageWidget()},
+      'Search': {'icon': Icons.search, 'page': SettingPageWidget()},
+      'Chat': {'icon': Icons.chat, 'page': SettingPageWidget()},
+      'Notifications': {
+        'icon': Icons.notifications_sharp,
+        'page': SettingPageWidget()
+      },
+      'Profile': {'icon': Icons.person, 'page': ProfilePageWidget()},
     };
+
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
     return Scaffold(
-      body: _currentPage ?? tabs[_currentPageName],
+      backgroundColor: Colored.white,
+      body: _currentPage ?? tabs[_currentPageName]['page'] ?? HomePageWidget(),
+      bottomNavigationBar: SafeArea(
+        child: Container(
+          margin: EdgeInsets.all(16),
+          height: 56,
+          decoration: BoxDecoration(
+            color: Colored.brightPurple,
+            borderRadius: const BorderRadius.all(Radius.circular(24)),
+            boxShadow: [
+              BoxShadow(
+                color: Colored.brightPurple.withOpacity(0.3),
+                offset: Offset(0, 20),
+                blurRadius: 20,
+              ),
+            ],
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: List.generate(tabs.length, (index) {
+              String tabName = tabs.keys.toList()[index];
+              IconData? tabIcon = tabs[tabName]['icon'] as IconData?;
+              return Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24),
+                child: InkWell(
+                  onTap: () {
+                    setState(() {
+                      _currentPage = null;
+                      _currentPageName = tabName;
+                      selectBottom = index;
+                    });
+                  },
+                  child: Center(
+                    child: Icon(
+                      tabIcon ?? Icons.error,
+                      size: 25,
+                      color:
+                          selectBottom == index ? Colored.egg : Colored.white,
+                    ),
+                  ),
+                ),
+              );
+            }),
+          ),
+        ),
+      ),
+
+      /*
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
         onTap: (i) => setState(() {
@@ -163,7 +220,7 @@ class _NavBarPageState extends State<NavBarPage> {
             tooltip: '',
           )
         ],
-      ),
+      ),*/
     );
   }
 }
